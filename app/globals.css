@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Track moves left → logos drift right-to-left across the viewport */
+@keyframes partnership-logo-flow {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@layer utilities {
+  .bg-surface-light {
+    background: linear-gradient(
+      165deg,
+      #f0f9ff 0%,
+      #fafafa 38%,
+      #f0fdfa 72%,
+      #f8fafc 100%
+    );
+  }
+
+  .bg-surface-dark {
+    background: linear-gradient(
+      165deg,
+      #0c1222 0%,
+      #0f172a 45%,
+      #134e4a 100%
+    );
+  }
+
+  .bg-surface-dark-rich {
+    background: linear-gradient(
+      155deg,
+      #020617 0%,
+      #0f172a 40%,
+      #134e4a 85%,
+      #042f2e 100%
+    );
+  }
+
+  .partnership-logo-flow {
+    animation: partnership-logo-flow 64s linear infinite;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .partnership-logo-flow {
+      animation: none;
+      transform: none;
+    }
+  }
+
+}
