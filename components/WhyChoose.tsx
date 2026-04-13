@@ -1,16 +1,25 @@
-const bullets = [
-  "Senior engineers integrated quickly",
-  "End-to-end product delivery",
-  "Quality and maintainability first",
-  "Timezone-friendly collaboration",
-];
-
-const stats = [
-  { value: "+300", label: "Successful projects", color: "#e8dcc8" },
-  { value: "+5", label: "Countries", color: "#2dd4bf" },
-  { value: "+50", label: "Discovery engagements", color: "#c4b5fd" },
-  { value: "4.8/5", label: "Satisfaction", color: "#6ee7b7" },
-];
+const cards = [
+  {
+    title: "Mature workflow",
+    description:
+      "We always handle every project with care and guarantee deep involvement of all team members. No stress, no mess! Artkai team plans thoroughly, develops efficiently, and delivers easily due to great communication, Agile methodology and personalized approach to each client.",
+  },
+  {
+    title: "Top 5% UX & Engineering Talents",
+    description:
+      "Turn all your bold ideas and innovative vision into reality with our talented design and engineering experts. We wrap high-quality code into a trendy and user-friendly design to impress even the most demanding users.",
+  },
+  {
+    title: "Accurate Estimations & Predictable Delivery",
+    description:
+      "Get no more unpleasant surprises, project delays or cost overruns! With our team everything always goes smoothly and according to plan. We set realistic timelines and provide accurate estimations, so that you can allocate all resources effectively and mitigate many development risks.",
+  },
+  {
+    title: "Cross-Platform Expertise",
+    description:
+      "Build intuitive and feature-rich cross-platform solutions with Artkai to reach out to a wider audience and power up your business. We use advanced technologies and tools to deliver apps that provide native-like experience and work seamlessly across multiple devices and platforms.",
+  },
+] as const;
 
 export function WhyChoose() {
   return (
@@ -32,45 +41,23 @@ export function WhyChoose() {
           id="why-heading"
           className="max-w-3xl font-hero text-2xl font-semibold leading-tight sm:text-3xl lg:text-4xl"
         >
-          Why teams choose Bitlyra
+          Why Bitlyra?
         </h2>
-        <ul className="mt-8 max-w-2xl space-y-3 text-sm text-white/70 sm:text-base">
-          {bullets.map((item) => (
-            <li key={item} className="flex gap-3">
-              <span
-                className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-white"
-                aria-hidden
-              />
-              <span>{item}</span>
+        <ul className="mt-8 grid grid-cols-1 gap-5 sm:mt-10 sm:grid-cols-2">
+          {cards.map((card) => (
+            <li
+              key={card.title}
+              className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-[1px] transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_12px_28px_rgba(0,0,0,0.35)]"
+            >
+              <h3 className="font-hero text-xl font-semibold tracking-tight text-white sm:text-2xl">
+                {card.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-white/75 sm:text-base">
+                {card.description}
+              </p>
             </li>
           ))}
         </ul>
-        <div className="mt-14 rounded-lg border border-white/15 sm:mt-16">
-          <div className="grid grid-cols-2 lg:grid-cols-4">
-            {stats.map((stat, i) => (
-              <div
-                key={stat.label}
-                className={[
-                  "px-5 py-8 text-left sm:px-8 sm:py-10 lg:py-12",
-                  i % 2 === 0 ? "border-r border-white/10" : "",
-                  i < 2 ? "border-b border-white/10" : "",
-                  "lg:border-b-0",
-                  i < 3 ? "lg:border-r lg:border-white/10" : "",
-                ]
-                  .filter(Boolean)
-                  .join(" ")}
-              >
-                <p
-                  className="font-hero text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[2.75rem]"
-                  style={{ color: stat.color }}
-                >
-                  {stat.value}
-                </p>
-                <p className="mt-2 text-xs text-white/50 sm:text-sm">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

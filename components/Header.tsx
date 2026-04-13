@@ -62,7 +62,7 @@ export function Header() {
         <Link
           href="#hero"
           onClick={handleLogoClick}
-          className="flex min-w-0 shrink-0 items-center gap-2 hover:opacity-90 sm:gap-3"
+          className="flex min-w-0 shrink-0 items-center hover:opacity-90"
           aria-label="Bitlyra — back to top"
         >
           <span
@@ -73,24 +73,16 @@ export function Header() {
             }
           >
             <Image
-              src="/bitlyra_logo_square_v3.svg"
+              src="/logo.svg"
               alt=""
-              width={48}
-              height={48}
-              className="h-11 w-11 object-contain shadow-sm drop-shadow-sm"
+              width={428}
+              height={117}
+              className="h-8 w-auto max-w-[min(52vw,220px)] object-contain object-left shadow-sm drop-shadow-sm sm:h-9 sm:max-w-[260px] lg:h-10 lg:max-w-[300px]"
               priority
               unoptimized
               aria-hidden
             />
           </span>
-          <div className="leading-tight">
-            <span className="block text-xl font-semibold lowercase tracking-tight text-white">
-              bitlyra
-            </span>
-            <span className="hidden text-[11px] text-zinc-400 sm:block">
-              Your ideas, our innovations
-            </span>
-          </div>
         </Link>
 
         <div className="flex min-w-0 flex-1 items-center justify-end gap-2 sm:gap-3 lg:gap-4">

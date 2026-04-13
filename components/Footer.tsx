@@ -43,9 +43,9 @@ export function Footer() {
                 Email:{" "}
                 <a
                   className="font-medium text-teal-400 transition hover:text-teal-300"
-                  href="mailto:hello@bitlyra.com"
+                  href="mailto:celioalmeida@bitlyra.com"
                 >
-                  hello@bitlyra.com
+                  celioalmeida@bitlyra.com
                 </a>
               </p>
               <div className="mt-5">

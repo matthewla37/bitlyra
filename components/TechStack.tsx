@@ -10,23 +10,6 @@ type TechItem = { name: string; src: string };
 
 const categories: { title: string; items: TechItem[] }[] = [
   {
-    title: "AI Tools",
-    items: [
-      {
-        name: "Cursor",
-        src: `${VOIDWEB_ASSET}/6889cf223ed28fc6ee0fe989_Frame%209147.svg`,
-      },
-      {
-        name: "ChatGPT",
-        src: `${VOIDWEB_ASSET}/6889cf22b10ebea120124fe4_Frame%209145.svg`,
-      },
-      {
-        name: "Claude",
-        src: `${VOIDWEB_ASSET}/6889cf2290f66c9500422ae4_Frame%209146.svg`,
-      },
-    ],
-  },
-  {
     title: "Front-End",
     items: [
       {
@@ -42,10 +25,6 @@ const categories: { title: string; items: TechItem[] }[] = [
         src: `${VOIDWEB_ASSET}/687736f1ac361105eed87fc0_image%2084.png`,
       },
       {
-        name: "Nuxt.js",
-        src: `${VOIDWEB_ASSET}/687736f0bc5e6a93599bdb70_image%2085.png`,
-      },
-      {
         name: "React.js",
         src: `${VOIDWEB_ASSET}/687736f04578cce4f503f2cd_image%2083.png`,
       },
@@ -54,11 +33,7 @@ const categories: { title: string; items: TechItem[] }[] = [
         src: `${VOIDWEB_ASSET}/687736f09d2bb77e3944fe20_image%2086.png`,
       },
       {
-        name: "Vuex",
-        src: `${VOIDWEB_ASSET}/687736f05856c4051dc60bef_image%2090.png`,
-      },
-      {
-        name: "Tailwind",
+        name: "TailwindCSS",
         src: `${VOIDWEB_ASSET}/687736f48f5d69d9658a191b_image%2091.png`,
       },
       {
@@ -75,7 +50,7 @@ const categories: { title: string; items: TechItem[] }[] = [
     title: "Back-End",
     items: [
       {
-        name: "PHP Laravel",
+        name: "Laravel",
         src: `${VOIDWEB_ASSET}/687737321cb6a12b73845964_image%2094.png`,
       },
       {
@@ -85,6 +60,22 @@ const categories: { title: string; items: TechItem[] }[] = [
       {
         name: "Express.js",
         src: `${VOIDWEB_ASSET}/6877373273e2844838cb12b6_image%2096.png`,
+      },
+      {
+        name: "C#",
+        src: "/tech/csharp.png",
+      },
+      {
+        name: ".NET",
+        src: "/tech/dotnet.png",
+      },
+      {
+        name: "Python",
+        src: "/tech/python.png",
+      },
+      {
+        name: "Django",
+        src: "/tech/django.png",
       },
       {
         name: "MySQL",
@@ -100,48 +91,6 @@ const categories: { title: string; items: TechItem[] }[] = [
       },
     ],
   },
-  {
-    title: "QA",
-    items: [
-      {
-        name: "Postman",
-        src: `${VOIDWEB_ASSET}/687746bfcdaa3e4bfbce103f_qa.png`,
-      },
-      {
-        name: "Selenium",
-        src: `${VOIDWEB_ASSET}/687737cec5dbc2a702be4d8a_image%20109.png`,
-      },
-      {
-        name: "Visual Studio",
-        src: `${VOIDWEB_ASSET}/687737cedfaa52fb56877e43_image%20111.png`,
-      },
-      {
-        name: "Jest",
-        src: `${VOIDWEB_ASSET}/6877383cd0a1c1eb22514cfa_image%20112.png`,
-      },
-    ],
-  },
-  {
-    title: "UI/UX",
-    items: [
-      {
-        name: "Figma",
-        src: `${VOIDWEB_ASSET}/687737d9bce7e03a5029ba2e_image%20114.png`,
-      },
-      {
-        name: "Adobe Suite",
-        src: `${VOIDWEB_ASSET}/687737ebf94cfb1b434b37e0_image%20115.png`,
-      },
-      {
-        name: "Google Analytics",
-        src: `${VOIDWEB_ASSET}/687737d9f75f8563a26eabba_image%20116.png`,
-      },
-      {
-        name: "Confluence",
-        src: `${VOIDWEB_ASSET}/687737d900bb15f21d81aadc_image%20118.png`,
-      },
-    ],
-  },
 ];
 
 const allTechnologies: TechItem[] = categories.flatMap((c) => c.items);
@@ -152,7 +101,7 @@ function TechCell({ name, src }: TechItem) {
       <div className="relative flex h-[4rem] w-[4rem] shrink-0 items-center justify-center sm:h-[4.25rem] sm:w-[4.25rem]">
         <Image
           src={src}
-          alt=""
+          alt={`${name} logo`}
           width={56}
           height={56}
           className="h-11 w-11 object-contain sm:h-12 sm:w-12"

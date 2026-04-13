@@ -1,10 +1,27 @@
 "use client";
 
+const CONTACT_EMAIL = "celioalmeida@bitlyra.com";
+
 export function ContactForm() {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = String(formData.get("name") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
+
+    const subject = encodeURIComponent(`Website inquiry from ${name || "Unknown"}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+    );
+
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+  }
+
   return (
     <form
       className="rounded-2xl border border-white/10 bg-slate-900/60 p-6 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.45)] backdrop-blur-sm sm:p-8"
-      onSubmit={(e) => e.preventDefault()}
+      onSubmit={handleSubmit}
     >
       <div className="space-y-4">
         <div>

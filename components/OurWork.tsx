@@ -118,7 +118,7 @@ function WorkHoverTile({ tile }: { tile: WorkTile }) {
           alt={tile.imageLabel}
           fill
           sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
-          className="object-cover motion-safe:transition motion-safe:duration-500 motion-reduce:blur-none sm:group-hover:blur-md sm:group-focus-within:blur-md"
+          className="object-cover motion-safe:transition motion-safe:duration-500 motion-safe:sm:group-hover:blur-md motion-safe:sm:group-focus-within:blur-md"
           priority={false}
         />
 
