@@ -1,6 +1,6 @@
 "use client";
 
-const CONTACT_EMAIL = "celioalmeida@bitlyra.com";
+const CONTACT_EMAIL = "admin@bitlyra.com";
 
 export function ContactForm() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
